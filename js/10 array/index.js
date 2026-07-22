@@ -20,4 +20,7 @@ console.log(student)
 student.pop("Bhavik")
 console.log(student)
 
-// 
+// Homogeneous(data will math and arange with data type) vs. Heterogeneous(data will not arange) Mixtures of data type
+
+const table=["bottle",234,true,diary={name:"sachin",rollnumeber:23}]
+console.log(table)
