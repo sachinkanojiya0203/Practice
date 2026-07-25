@@ -15,3 +15,4 @@ code.innerHTML="<p>hello</p>" //use HTML
 const username=document.querySelector("#username")
 username.innerText="Dhaval"  //text
 // console.log(body)
+// 
