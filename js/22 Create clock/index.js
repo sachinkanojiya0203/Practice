@@ -5,7 +5,7 @@ function showtime(){
     document.getElementById('time').innerText=time
 }
 
-let interval=setInterval(showtime,1000);
+let interval=setInterval(showtime,1000);//  interval will repeat or refresh ti given seacond 
 
 stp_btn.addEventListener('click',()=>{
     clearInterval(interval)
