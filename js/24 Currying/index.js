@@ -1,6 +1,6 @@
 // this called currying(if parameter will not complete the output will not give)
 
-// make a multiple closure
+// make a multiple clouser
 function add(a){
     return function(b){
         return function(c){
