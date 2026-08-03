@@ -1,5 +1,6 @@
 let currentplayer="X";
 let arr=Array(9).fill(null);
+const outpu=document.getElementById("winer")
 
 function checkwinner(){
     if(
@@ -13,11 +14,13 @@ function checkwinner(){
         (arr[0] !== null && arr[0]==arr[4]&&arr[4]==arr[8])||
         (arr[2] !== null && arr[2]==arr[4]&&arr[4]==arr[6])
     ){
-        document.write("winner is:",currentplayer)
+        // document.write("winner is:",currentplayer)
+        document.getElementById('winer').innerText=`Winner is: ${currentplayer}`
         return
     }
     if(!arr.some((e)=>e===null)){
-        document.write("Draw!")
+        document.getElementById('winer').innerText="Draw!"
+        // document.write("Draw!")
         return
     }
 }
