@@ -1,0 +1,17 @@
+.container{
+
+}
+
+.row{
+    display: flex;
+}
+.col{
+    height: 70px;
+    width:70px;
+    border: solid black ;
+    font-size: 40px ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
