@@ -8,9 +8,13 @@
 .col{
     height: 70px;
     width:70px;
-    border: solid black ;
+    border:solid rgba(206, 219, 24, 0.762) ;
     font-size: 40px ;
     display: flex;
+    cursor: pointer;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(226, 159, 4);
     align-items: center;
     justify-content: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
