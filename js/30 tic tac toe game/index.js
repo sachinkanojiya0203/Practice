@@ -23,7 +23,7 @@ function checkwinner(){
         // document.write("Draw!")
         return
     }
-}
+} 
 
 
 function handleClick(el){
