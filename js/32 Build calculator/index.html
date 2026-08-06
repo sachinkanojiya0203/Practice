@@ -10,37 +10,38 @@
     <title>Build A calculator</title>
 </head>
 
-<body>
+<body>  
     <h1>calculator</h1>
 
     <div class="calculator-container">
         <div class="calculator">
-            <input type="text"  id="number-input">
+            <input type="text" disabled  id="number-input">
+            <input type="text" placeholder="ANS" disabled id="input-result">
             <div class="buttons">
                 <div class="row">
-                    <div onclick="handleClickButton(this)" class="col col-3 cal-buttons">C</div>
-                    <div onclick="handleClickButton(this)" class="col col-3 cal-buttons">+</div>
-                    <div onclick="handleClickButton(this)" class="col col-3 cal-buttons">-</div>
-                    <div onclick="handleClickButton(this)" class="col col-3 cal-buttons">*</div>
+                    <div onclick="handleClickButton(this)" class="col col-3 oprator cal-buttons"><span class="btn-sp">+</span></div>
+                    <div onclick="handleClickButton(this)" class="col col-3 oprator cal-buttons"><span class="btn-sp">-</span></div>
+                    <div onclick="handleClickButton(this)" class="col col-3 oprator cal-buttons"><span class="btn-sp">*</span></div>
+                    <div onclick="handleClickButton(this)" class="col col-3 oprator cal-buttons"><span class="btn-sp">/</span></div>
                 </div>
                 <div class="row">
-                    <div onclick="handleClickButton(this)" class="col col-3 cal-buttons">7</div>
-                    <div onclick="handleClickButton(this)" class="col col-3 cal-buttons">8</div>
-                    <div onclick="handleClickButton(this)" class="col col-3 cal-buttons">9</div>
+                    <div onclick="handleClickButton(this)" class="col col-3 cal-buttons"><span class="btn-sp">7</span></div>
+                    <div onclick="handleClickButton(this)" class="col col-3 cal-buttons"><span class="btn-sp">8</span></div>
+                    <div onclick="handleClickButton(this)" class="col col-3 cal-buttons"><span class="btn-sp">9</span></div>
                 </div>
                 <div class="row">
-                    <div onclick="handleClickButton(this)" class="col col-3 cal-buttons">4</div>
-                    <div onclick="handleClickButton(this)" class="col col-3 cal-buttons">5</div>
-                    <div onclick="handleClickButton(this)" class="col col-3 cal-buttons">6</div>
+                    <div onclick="handleClickButton(this)" class="col col-3 cal-buttons"><span class="btn-sp">4</span></div>
+                    <div onclick="handleClickButton(this)" class="col col-3 cal-buttons"><span class="btn-sp">5</span></div>
+                    <div onclick="handleClickButton(this)" class="col col-3 cal-buttons"><span class="btn-sp">6</span></div>
                 </div>
                 <div class="row">
-                    <div onclick="handleClickButton(this)" class="col col-3 cal-buttons">1</div>
-                    <div onclick="handleClickButton(this)" class="col col-3 cal-buttons">2</div>
-                    <div onclick="handleClickButton(this)" class="col col-3 cal-buttons">4</div>
+                    <div onclick="handleClickButton(this)" class="col col-3 cal-buttons"><span class="btn-sp">1</span></div>
+                    <div onclick="handleClickButton(this)" class="col col-3 cal-buttons"><span class="btn-sp">2</span></div>
+                    <div onclick="handleClickButton(this)" class="col col-3 cal-buttons"><span class="btn-sp">4</span></div>
                 </div>
                 <div class="row">
-                    <div onclick="handleClickButton(this)" class="col col-4 cal-buttons">0</div>
-                    <div onclick="handleClickButton(this)" class="col col-3 cal-buttons">clear</div> 
+                    <div onclick="handleClickButton(this)" class="col col-4 cal-buttons"><span class="btn-sp">0</span></div>
+                    <div onclick=" reset();" class="col col-3 cal-buttons"><span class="btn-sp">c</span>lear</div> 
                 </div>
                 
             </div>
