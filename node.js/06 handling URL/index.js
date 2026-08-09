@@ -12,7 +12,10 @@ const myserver=http.createServer((req,res)=>{
         switch(myurl.pathname){
             case'/': res.end("HOME");
             break;
-            case'/about':res.end("ABOUT");
+            case'/about':
+            const username=myurl.query.name
+            const userid=myurl.query.id
+            res.end(`hi ${username}\nid ${userid}`)
             break
             default:res.end("404 not Found!");
 
