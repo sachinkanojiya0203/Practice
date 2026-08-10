@@ -1,10 +1,10 @@
 /*
 ----HTTP methods---
-1. GET
-2. POST
-3. PUT
-4. PATCH
-5. DELETE
+1. GET -> to get data form server
+2. POST -> to send or post data to server
+3. PUT  -> to put some data on server
+4. PATCH -> to update the exsiting data update 
+5. DELETE -> to remove data on server
 */
 const http=require('http');
 const fs=require('fs');
@@ -38,7 +38,7 @@ const myserver=http.createServer((req,res)=>{
                     // DB Query
                     res.end('sucess')
                 };
-                
+
                 break;
             default:res.end("404 not Found!");
 
