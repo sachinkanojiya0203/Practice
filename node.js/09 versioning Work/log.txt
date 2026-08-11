@@ -1,6 +1,6 @@
 Versions 
 
-//4.18.2
+//^4.18.2
 
 1st. Part ->4 
 2nd. Part ->18 
@@ -12,3 +12,8 @@ latest -> 4.18.3
 
 //2nd part- recommended  bug fix (Secure)
 Latest ->4.19.1
+
+//1st part - major release- major/breaking update
+latest -> 5.0.1
+
+//^ carot symbol this is use for  lock current version like ^4
