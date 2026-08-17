@@ -29,12 +29,12 @@ app.get('/api/users', (req, res) => {
 
 
 app.post('/api/users', (req, res) => {
-    const body=req.body
-    users.push({...body,id:users.length+1});
-    fs.writeFile("./user.json" ,JSON.stringfy(users),(err,data)=>{
+    const body=req.body;
+    users.push({...body, id:users.length+1});
+    fs.writeFile("./user.json" ,JSON.stringify(users),(err,data)=>{
 
         // TODO: create new user
-        return res.json({ status: "success",id:users.length+1 });
+        return res.json({ status: "success",id:users});
     })
 })
 
