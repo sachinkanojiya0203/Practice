@@ -34,7 +34,7 @@ app.post('/api/users', (req, res) => {
     fs.writeFile("./user.json" ,JSON.stringify(users),(err,data)=>{
 
         // TODO: create new user
-        return res.json({ status: "success",id:users});
+        return res.json({ status: "success",id:users.length});
     })
 })
 
