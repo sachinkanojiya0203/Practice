@@ -34,7 +34,7 @@ app.get('/users', (req, res) => {
 // Rest api
 
 app.get('/api/users', (req, res) => {
-    res.header('myname','sachin_kanojiya')
+    res.header('X-myname','sachin_kanojiya')//add to x custom header
     console.log(req.headers);
     return res.json(users);
 });
