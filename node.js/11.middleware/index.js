@@ -9,7 +9,16 @@ const app = express();
 // using middleware - plugin
 app.use(express.urlencoded({extended:false}))
 app.use((req,res,next)=>{
-    console.log('this is middleware!')
+    console.log('this is middleware 1!')
+    next();
+})
+app.use((req,res,next)=>{
+    console.log('this is middleware 2 !')
+    fs.appendFile("log.txt",`\n ${Date.now()} ${req.ip} : ${req.method} ${req.path}`,(err,data)=>{
+
+        next();
+    })
+    // return res.json({msg:'this is middleware!'})
 })
 // ROUTES
 
