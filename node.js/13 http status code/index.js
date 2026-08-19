@@ -1,7 +1,8 @@
 const http = require('http');
 const fs=require('fs')
 const express = require('express')
-const users = require('./user.json')
+const users = require('./user.json');
+const { error } = require('console');
 const port = 8000;
 
 const app = express();
@@ -44,17 +45,21 @@ app.get('/api/users', (req, res) => {
 
 app.post('/api/users', (req, res) => {
     const body=req.body;
+    if(!body || !body.first_name || !body.last_name|| !body.email|| !body.gender|| !body.job_Title){
+        return res.status(400).json({msg:"All Field are Required!"})
+    }
     users.push({...body, id:users.length+1});
     fs.writeFile("./user.json" ,JSON.stringify(users),(err,data)=>{
 
         // TODO: create new user
-        return res.json({ status: "success",id:users.length});
+        return res.status(201). json({ status: "success",id:users.length});
     })
 })
 
 app.route('/api/users/:id').get((req, res) => {
     const id = Number(req.params.id);
     const user = users.find(((users) => users.id === id));
+    if(!user) return res.status(404).json({error:"User nor found!"})
     return res.json(user)
 }).patch((req, res) => {
     // TODO: edit user with id
