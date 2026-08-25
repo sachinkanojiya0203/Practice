@@ -9,10 +9,10 @@ const port=8001;
 connectTomongoDB('mongodb://127.0.0.1:27017/Short-url').then(()=>console.log("MOngoDB Connected!"))
 app.use(express.json());    
 
-app.get('/:shortId',async(req,res)=>{
-    const shortId=req.params.shortId;
+app.get('/:ShortId',async(req,res)=>{
+    const ShortId=req.params.ShortId;
     const entry = await URL.findOneAndUpdate({
-        shortId
+        ShortId 
     },{$push:{
         VisitHistory:{
             timestamp:Date.now(),

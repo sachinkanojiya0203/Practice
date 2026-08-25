@@ -14,4 +14,10 @@ async function HandlegenerateNewURL(req,res) {
     return res.json({id:ShortID});
 }
 
-module.exports={HandlegenerateNewURL}
+async function HandleanAlytics(req,res) {
+    const ShortId=req.params.ShortId;
+    const result=await URL.findOne({ShortId});
+    return res.json({totalClicks:result.VisitHistory.length,analytics:result.VisitHistory}) 
+}
+
+module.exports={HandlegenerateNewURL,HandleanAlytics}
