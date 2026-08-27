@@ -19,5 +19,5 @@ async function HandleanAlytics(req,res) {
     const result=await URL.findOne({ShortId});
     return res.json({totalClicks:result.VisitHistory.length,analytics:result.VisitHistory}) 
 }
-
+// commet
 module.exports={HandlegenerateNewURL,HandleanAlytics}
