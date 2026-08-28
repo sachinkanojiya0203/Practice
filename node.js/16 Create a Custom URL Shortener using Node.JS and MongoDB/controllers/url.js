@@ -20,4 +20,5 @@ async function HandleanAlytics(req,res) {
     return res.json({totalClicks:result.VisitHistory.length,analytics:result.VisitHistory}) 
 }
 
+
 module.exports={HandlegenerateNewURL,HandleanAlytics}
