@@ -11,7 +11,9 @@ async function HandlegenerateNewURL(req,res) {
         visitedhistory:[],
 
     });
-    return res.json({id:ShortID});
+    return res.render('home',{
+        id:ShortID
+    })
 }
 
 async function HandleanAlytics(req,res) {
