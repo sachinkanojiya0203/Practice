@@ -1,4 +1,4 @@
-const shortid=require('ShortId')
+const shortid=require('shortid')
 const URL = require('../models/url');
 
 async function HandlegenerateNewURL(req,res) {

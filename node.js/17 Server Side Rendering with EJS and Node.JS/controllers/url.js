@@ -1,4 +1,4 @@
-const shortid=require('ShortId')
+const shortid=require('shortid')
 const URL = require('../models/url');
 
 async function HandlegenerateNewURL(req,res) {
@@ -15,10 +15,10 @@ async function HandlegenerateNewURL(req,res) {
 }
 
 async function HandleanAlytics(req,res) {
-    const ShortId=req.params.ShortId;
+    const ShortId=req.params.shortid;
     const result=await URL.findOne({ShortId});
     return res.json({totalClicks:result.VisitHistory.length,analytics:result.VisitHistory}) 
 }
-// commet
-//today
+
+
 module.exports={HandlegenerateNewURL,HandleanAlytics}

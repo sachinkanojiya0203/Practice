@@ -9,10 +9,9 @@ const port=8001;
 connectTomongoDB('mongodb://127.0.0.1:27017/Short-url').then(()=>console.log("MOngoDB Connected!"))
 app.use(express.json());    
 
-app.get('/test',(res,req)=>{
-    return res.end('<h1>HEy this is server</h1>')
+app.get('/test',(req,res)=>{
+    return res.end("<h1>hey This is server</h1>")
 });
-
 app.get('/:ShortId',async(req,res)=>{
     const ShortId=req.params.ShortId;
     const entry = await URL.findOneAndUpdate({
@@ -23,7 +22,7 @@ app.get('/:ShortId',async(req,res)=>{
         },
     }});
     res.redirect(entry.redirectURL)
-})
+});
 app.use('/url',urlRoutes);
 
 app.listen(port,()=>console.log(`Server started PORT: ${port}`))
