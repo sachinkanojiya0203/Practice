@@ -1,7 +1,9 @@
 const express=require('express');
 const router=express.Router()
+const {HandleuserSignup,HandleuserLogin}=require('../controllers/user')
 
-router.post('/',)
+router.post('/',HandleuserSignup)
+router.post('/login',HandleuserLogin)
 
 
 

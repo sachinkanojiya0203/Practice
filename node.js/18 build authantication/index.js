@@ -1,6 +1,7 @@
 const express=require('express');
 const urlRoutes=require('./routes/url')
 const staticRoute=require('./routes/staticRouter')
+const userRoute=require('./routes/user')
 const path=require('path')
 const {connectTomongoDB}=require('./connect')
 const URL=require('./models/url')
@@ -33,6 +34,7 @@ app.get('/url/:ShortId',async(req,res)=>{
     res.redirect(entry.redirectURL)
 });
 app.use('/url',urlRoutes);
+app.use('/user',userRoute);
 app.use('/',staticRoute);
 
 app.listen(port,()=>console.log(`Server started PORT: ${port}`))
