@@ -5,6 +5,9 @@ const userRoute=require('./routes/user')
 const path=require('path')
 const {connectTomongoDB}=require('./connect')
 const URL=require('./models/url')
+const CookieParser=require('cookie-parser');
+const cookieParser = require('cookie-parser');
+const {restrictTologgedinUSerOnly,checkAuth}=require('./middleware/auth')
 const app=express();
 const port=8001;
 
@@ -15,13 +18,8 @@ app.set('views',path.resolve('./views'))
 app.use(express.json());   
 
 app.use(express.urlencoded({extended:false}))
+app.use(CookieParser());
 
-// app.get('/test',async(req,res)=>{
-//     const allurls= await URL.find({});
-//     return res.render('home',{
-//         urls:allurls,
-//     })
-// });
 app.get('/url/:ShortId',async(req,res)=>{
     const ShortId=req.params.ShortId;
     const entry = await URL.findOneAndUpdate({
@@ -33,8 +31,8 @@ app.get('/url/:ShortId',async(req,res)=>{
     }});
     res.redirect(entry.redirectURL)
 });
-app.use('/url',urlRoutes);
+app.use('/url',restrictTologgedinUSerOnly,urlRoutes);
 app.use('/user',userRoute);
-app.use('/',staticRoute);
+app.use('/',checkAuth,staticRoute);
 
 app.listen(port,()=>console.log(`Server started PORT: ${port}`))
