@@ -32,7 +32,7 @@ app.get('/url/:ShortId',async(req,res)=>{
     }});
     res.redirect(entry.redirectURL)
 });
-app.use('/url',restrictTo('NORMAL'),urlRoutes);
+app.use('/url',restrictTo(["NORMAL","ADMIN"]),urlRoutes);
 app.use('/user',userRoute);
 app.use('/',staticRoute);
 
