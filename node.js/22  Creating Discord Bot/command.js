@@ -7,13 +7,13 @@ const commands = [
     }
 ]
 
-const rest = new REST({ version: "10" }).setToken(process.env.DISCORD_TOKEN);
+const rest = new REST({ version: "10" }).setToken(process.env.TOKEN);
 
 (async () => {
     try {
         console.log('Started refreshing application (/) commands.');
 
-        await rest.put(Routes.applicationCommands("1548746141737156690"), { body: commands });
+        await rest.put(Routes.applicationCommands("ID"), { body: commands });
 
         console.log('Successfully reloaded application (/) commands.');
     } catch (error) {
