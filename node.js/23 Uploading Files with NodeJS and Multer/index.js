@@ -1,10 +1,11 @@
 const path=require("path")
 const express=require("express")
 
+
 const app=express();
 const PORT=8000;
 
-app.set("View Engine","ejs");
+app.set('view engine', 'ejs'); 
 app.set("View",path.resolve("./views"));
 
 app.use(express.json());
@@ -14,4 +15,4 @@ app.get("/",(req,res)=>{
 });
 
 
-app.listen(PORT,()=>console.log(`server started Port No: ${PORT}`))
+app.listen(PORT,()=>console.log(`server started Port No: http://localhost:${PORT}`))
