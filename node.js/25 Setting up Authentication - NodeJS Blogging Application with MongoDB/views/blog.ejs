@@ -17,7 +17,7 @@
         <pre class="mt-3"><%= blog.body %></pre>
     </div>
      <div class="container mt-4">
-        <img src="<%= blog.createdBy.profile_url %>" alt="" srcset="" width="100px"><%=blog.createdBy.fillname %>
+        <img src="<%= blog.createdBy.profile_url %>" width="100px"/><%=blog.createdBy.fullname %>
      </div>    
 
     <%-include('./partials/scripts') %>

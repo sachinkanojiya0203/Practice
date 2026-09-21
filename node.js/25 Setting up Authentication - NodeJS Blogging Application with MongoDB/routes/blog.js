@@ -34,6 +34,9 @@ router.get("/:id",async(req,res)=>{
   })
 });
 
+router.post("/comment/:blodId",(req,res)=>{
+  const comment=
+})
 
 router.post("/",upload.single("coverImage"),async(req,res)=>{
     const {title,body}=req.body
