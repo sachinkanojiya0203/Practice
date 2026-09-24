@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express');
 const path=require("path")
 const cookieParser=require('cookie-parser')
@@ -11,7 +12,6 @@ const { connected } = require('process');
 const { checkForAuthenticationCookie } = require('./middlewares/authantication.js');
 
 mongoose.connect(process.env.MONGO_URL).then((e)=>console.log("mongoDB connected"));
-// "mongodb://localhost:27017/BlogTech"
 app.set("view engine","ejs")
 app.set("views",path.resolve("./views"));
 
