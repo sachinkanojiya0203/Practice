@@ -10,10 +10,25 @@
     <input type="text" placeholder="Enter Message" id="message">
     <button type="submit" id="sendBTN">Send</button>
     <script src="/socket.io/socket.io.js"></script>
+
+    <div class="messages"></div>
     <script>
         const socket = io();
         const send_btn=document.getElementById("sendBTN");
         const messageinput=document.getElementById("message");
+        const allmessages=document.querySelector(".messages");
+
+        socket.on("message",(message)=>{
+            const p=document.createElement('p');
+            p.textContent=message;
+            allmessages.appendChild(p)
+        });
+
+        send_btn.addEventListener("click",(e)=>{
+            const message=messageinput.value;
+            console.log(message);
+            socket.emit("user-message",message)
+        })
         </script>
 </body>
 </html>
